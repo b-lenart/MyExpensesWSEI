@@ -1,0 +1,108 @@
+
+
+.recent-actions-table {
+  width: 100%;
+  font-size: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 18px 18px 0;
+  box-sizing: border-box;
+  box-shadow: 9px 10px 0px 0px #e2d033;
+  border-top: 1px solid teal;
+
+  .transactions-container {
+    margin-top: 10px;
+    max-height: 28vh;
+    overflow: auto;
+    padding-left: 40px;
+  }
+
+  th {
+    border-bottom: 1px solid rgb(221, 221, 221);
+    width: 20%;
+  }
+
+  th, td {
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 20%;
+  }
+
+  &__head {
+    font-weight: 700;
+    text-align: left;
+    display: flex;
+    border-bottom: 1px solid #e2e2e2;
+    padding-left: 40px;
+
+    div {
+      width: 20%;
+      padding: 10px;
+    }
+  }
+
+  &__action {
+    transition: 0.2s all;
+    display: flex;
+    position: relative;
+
+    .transaction-type {
+      position: absolute;
+      top: 49%;
+      left: -10px;
+      width: 10px;
+      height: 10px;
+      transform: translateY(-50%);
+      border-radius: 50%;
+    }
+
+    div.action-field {
+      width: 20%;
+      padding: 16px 10px 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover {
+      background: #ebebeb;
+    }
+  }
+
+  .table-actions-container {
+    display: flex;
+
+    .table-action {
+      transition: 0.2s all;
+      cursor: pointer;
+      position: relative;
+
+      &::before {
+        content: 'EDIT';
+        position: absolute;
+        top: -10px;
+        font-size: 9px;
+        letter-spacing: 1px;
+        opacity: 0;
+        transition: 0.2s all;
+        color: #000;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &:nth-child(2) {
+        margin-left: 15px;
+        &::before {
+          content: 'DELETE';
+        }
+      }
+
+      &:hover {
+        color: #e2d033;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

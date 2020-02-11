@@ -1,0 +1,26 @@
+<div class="dashboard">
+  <button title="Sign Out" class="sign-out-btn" (click)="logout()"><i class="fas fa-sign-out-alt"></i></button>
+  <div class="bg-circle"></div>
+  <div class="dashboard-left">
+    <div class="app-title">
+      <h1>My<span>Expenses</span></h1>
+    </div>
+    <div class="account-balance">
+      <p class="account-balance__title">Account balance:</p>
+      <p class="account-balance__amount">
+        <span class="dollar-sign">$</span>
+        <span *ngIf="accountBalance" [style.font-size]="240/accountBalance.length + 'px'">{{ accountBalance }}</span>
+      </p>
+    </div>
+    <div class="expense-form-container">
+      <h3>Add expense form:</h3>
+      <app-transaction-form></app-transaction-form>
+    </div>
+  </div>
+  <div class="dashboard-right">
+    <div>
+      <h3>Expense list:</h3>
+      <app-expense-detail-list></app-expense-detail-list>
+    </div>
+  </div>
+</div>

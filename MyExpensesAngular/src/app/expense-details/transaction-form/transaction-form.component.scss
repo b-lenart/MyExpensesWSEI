@@ -1,0 +1,61 @@
+.input-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-control {
+  color: #fff;
+  transition: 0.2s all;
+  border: none;
+  width: 100%;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 5px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+
+  &::placeholder {
+    color: rgba(235, 235, 235, 0.65);
+  }
+
+  &:focus {
+    border-bottom: 1px solid #e2d033;
+  }
+}
+
+.add-new-btn {
+  padding: 10px 50px;
+  background: #e2d033;
+  color: #222211;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 10% auto auto;
+}
+
+.type-container {
+  width: 80%;
+  margin: 0 auto 15px auto;
+  color: white;
+}
+
+#income-input {
+  margin-left: 20px;
+}
+
+button:disabled {
+  opacity: 0.65;
+  background: lightgrey;
+  cursor: not-allowed;
+}

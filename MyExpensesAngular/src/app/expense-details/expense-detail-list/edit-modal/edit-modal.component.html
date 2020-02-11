@@ -1,0 +1,32 @@
+<div class="edit-form-container">
+  <form class="edit-form" #editForm="ngForm" autocomplete="off" (submit)="editTransaction()">
+    <span class="close-modal-container" (click)="onCloseModal()">
+      <i class="fas fa-times"></i>
+    </span>
+    <input type="hidden" name="expenseId" [value]="transaction.expenseId">
+    <div class="type-container">
+      <input type="radio" name="transactionType" value="outcome" [(ngModel)]="transaction.transactionType" id="outcome-input"><label for="outcome-input">Outcome</label>
+      <input type="radio" name="transactionType" value="income" [(ngModel)]="transaction.transactionType" id="income-input"><label for="income-input">Income</label>
+    </div>
+    <div class="input-container">
+      <p class="input-title">Description</p>
+      <input name="editDescription" [(ngModel)]="transaction.description" class="form-control" required>
+    </div>
+    <div class="input-container">
+      <p class="input-title">Date</p>
+      <input name="Date" [(ngModel)]="transaction.date"
+        class="form-control" required>
+    </div>
+    <div class="input-container">
+      <p class="input-title">Type</p>
+      <input name="Type" [(ngModel)]="transaction.type" class="form-control" required>
+    </div>
+    <div class="input-container">
+      <p class="input-title">Amount</p>
+      <input type="number" name="Amount" [(ngModel)]="transaction.amount" class="form-control">
+    </div>
+    <div class="btn-container">
+      <button class="edit-btn" type="submit">Save changes</button>
+    </div>
+  </form>
+</div>

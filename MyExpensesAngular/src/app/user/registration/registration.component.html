@@ -1,0 +1,28 @@
+<h3>User Registration</h3>
+<form [formGroup]="service.formModel" (submit)="onSubmit()">
+  <div class="form-group">
+    <label>*Username</label>
+    <input class="form-control" formControlName="UserName">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input class="form-control" formControlName="Email">
+  </div>
+  <div class="form-group">
+    <label>Full Name</label>
+    <input class="form-control" formControlName="FullName">
+  </div>
+  <div formGroupName="Passwords">
+    <div class="form-group">
+      <label>*Password</label>
+      <input type="password" class="form-control" formControlName="Password">
+    </div>
+    <div class="form-group">
+      <label>*Confirm Password</label>
+      <input type="password" class="form-control" formControlName="ConfirmPassword">
+    </div>
+  </div>
+  <div class="user-btn-container">
+    <button class="user-button" type="submit" [disabled]="!service.formModel.valid">Sign Up</button>
+  </div>
+</form>

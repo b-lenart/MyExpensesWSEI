@@ -1,0 +1,29 @@
+<div class="recent-actions-table" cellspacing="0" cellpadding="0">
+  <div class="recent-actions-table__head">
+    <div>Description</div>
+    <div>Amount</div>
+    <div>Type</div>
+    <div>Date</div>
+    <div></div>
+  </div>
+  <div class="transactions-container">
+    <div *ngFor="let transaction of service.list" class="recent-actions-table__action">
+      <div [style.background]="transaction.transactionType === 'income' ? '#8BC34A' : '#F44336'" class="transaction-type"></div>
+      <div class="action-field">{{ transaction.description}}</div>
+      <div class="action-field">{{ transaction.amount}}</div>
+      <div class="action-field">{{ transaction.type}}</div>
+      <div class="action-field">{{ transaction.date}}</div>
+      <div class="action-field">
+        <div class="table-actions-container">
+          <div class="table-action" (click)="onEdit(transaction)">
+            <i class="far fa-edit"></i>
+          </div>
+          <div class="table-action" (click)="onDelete(transaction.expenseId)">
+            <i class="far fa-trash-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-edit-modal *ngIf="isModalVisible" [transaction]="transactionToEdit" (modalClose)="closeModal()"></app-edit-modal>

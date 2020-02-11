@@ -1,0 +1,23 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="expenseId" [value]="service.formData.expenseId">
+  <div class="type-container">
+    <input type="radio" name="transactionType" value="outcome" [(ngModel)]="service.formData.transactionType" id="outcome-input"><label for="outcome-input">Outcome</label>
+    <input type="radio" name="transactionType" value="income" [(ngModel)]="service.formData.transactionType" id="income-input"><label for="income-input">Income</label>
+  </div>
+  <div class="input-container">
+    <input required name="description" #Description="ngModel" [(ngModel)]="service.formData.description" class="form-control" placeholder="Description">
+  </div>
+  <div class="input-container">
+    <input required name="Date" #Date="ngModel" [(ngModel)]="service.formData.date"
+      class="form-control" placeholder="Date - DD.MM.YYYY" pattern="(([1-2][0-9])|([1-9])|(3[0-1])).((1[0-2])|([1-9])).[0-9]{4}">
+  </div>
+  <div class="input-container">
+    <input required name="Type" #Type="ngModel" [(ngModel)]="service.formData.type" class="form-control" placeholder="Type">
+  </div>
+  <div class="input-container">
+    <input required type="number" name="Amount" #Amount="ngModel" [(ngModel)]="service.formData.amount" class="form-control" placeholder="Amount">
+  </div>
+  <div class="btn-container">
+    <button class="add-new-btn" type="submit" [disabled]="form.invalid">Add</button>
+  </div>
+</form>
