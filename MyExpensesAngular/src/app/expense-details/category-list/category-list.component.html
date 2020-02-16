@@ -1,0 +1,17 @@
+<div class="recent-actions-table">
+  <div class="recent-actions-table__head">
+    <div>Category</div>
+  </div>
+  <div class="transactions-container">
+    <div *ngFor="let category of getCategories | keyvalue" class="recent-actions-table__action">
+      <div class="action-field">{{ category.key}}</div>
+      <div class="line-container">
+        <div class="category-amount-line"
+          [style.width]="(getAbsoluteValue(category.value)/biggestTransaction) * 100 + '%'"
+          [style.background]="category.value < 0 ? '#F44336' : '#8BC34A'">
+        </div>
+      </div>
+      <div class="category-amount">{{ category.value }}</div>
+    </div>
+  </div>
+</div>

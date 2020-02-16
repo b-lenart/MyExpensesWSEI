@@ -42,13 +42,8 @@ namespace MyExpenses.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutExpenseDetail(int id, ExpenseDetail expenseDetail)
+        public async Task<IActionResult> PutExpenseDetail(ExpenseDetail expenseDetail)
         {
-            if (id != expenseDetail.ExpenseId)
-            {
-                return BadRequest();
-            }
-
             _context.Entry(expenseDetail).State = EntityState.Modified;
 
             try
@@ -57,7 +52,7 @@ namespace MyExpenses.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ExpenseDetailExists(id))
+                if (!ExpenseDetailExists(expenseDetail.ExpenseId))
                 {
                     return NotFound();
                 }

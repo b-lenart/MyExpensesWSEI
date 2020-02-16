@@ -18,10 +18,6 @@ export class ExpenseDetailListComponent implements OnInit {
     this.service.refreshList();
   }
 
-  populateForm(pd: ExpenseDetail) {
-    this.service.formData = Object.assign({}, pd);
-  }
-
   onDelete(expenseId) {
     if (confirm('Are you sure to delete this record ?')) {
       this.service.deleteExpenseDetail(expenseId)

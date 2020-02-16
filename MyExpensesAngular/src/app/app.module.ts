@@ -17,6 +17,7 @@ import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { UserService } from './shared/user.service';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { CategoryListComponent } from './expense-details/category-list/category-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     EditModalComponent,
     UserComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,
