@@ -24,17 +24,12 @@ export class CategoryListComponent implements OnInit {
         }
         return sum;
       }, {});
-      console.log(sortedByCategory);
 
-      // var arr = Object.keys( sortedByCategory ).map(function ( key ) { return sortedByCategory[key]; });
-      let arr = Object.values(sortedByCategory);
-      console.log(arr);
-      // let min = Math.min(...arr);
-      // let max = Math.max(...arr);
+      const arr = Object.values(sortedByCategory);
       const absoluteNumbers = arr.map((v: number) => Math.abs(v));
       this.biggestTransaction = Math.max(...absoluteNumbers);
-      console.log(this.biggestTransaction);
       return sortedByCategory;
+
     } else {
       return {};
     }
@@ -43,12 +38,4 @@ export class CategoryListComponent implements OnInit {
   getAbsoluteValue(value: number) {
     return Math.abs(value);
   }
-  //   let sortedByCategory = this.service.list.reduce((c, v) => {
-  //     c[v.type] = (c[v.type] || 0) + v.amount;
-  //     return c;
-  //   }, {});
-  //   console.log(sortedByCategory);
-  //   return sortedByCategory;
-  // }
-
 }
